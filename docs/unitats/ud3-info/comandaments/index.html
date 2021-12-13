@@ -1,0 +1,1280 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://fpieseljust.github.io/som21-22/unitats/ud3-info/comandaments/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Comandaments - Sistemes operatius monolloc 21-22</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestio-de-la-informacio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sistemes operatius monolloc 21-22" class="md-header__button md-logo" aria-label="Sistemes operatius monolloc 21-22" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemes operatius monolloc 21-22
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comandaments
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sistemes operatius monolloc 21-22" class="md-nav__button md-logo" aria-label="Sistemes operatius monolloc 21-22" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Sistemes operatius monolloc 21-22
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Unitats
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unitats" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unitats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Unitat 3 - Gestió de la informació
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unitat 3 - Gestió de la informació" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unitat 3 - Gestió de la informació
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Comandaments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Comandaments
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execuccio-de-linterpret-dordres" class="md-nav__link">
+    Execucció de l'interpret d'ordres
+  </a>
+  
+    <nav class="md-nav" aria-label="Execucció de l'interpret d'ordres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-larbre-de-directoris" class="md-nav__link">
+    Estructura de l’arbre de directoris.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-fitxers-i-directoris" class="md-nav__link">
+    Gestió de fitxers i directoris.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutes" class="md-nav__link">
+    Rutes:
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutes:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutes-relatives" class="md-nav__link">
+    Rutes relatives:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directori-pare" class="md-nav__link">
+    Directori pare
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutes-absolutes" class="md-nav__link">
+    Rutes absolutes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordres-basiques" class="md-nav__link">
+    Ordres bàsiques:
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordres bàsiques:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
+    pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#du-disk-usage" class="md-nav__link">
+    du (disk usage)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df-display-free" class="md-nav__link">
+    df (display free)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-catenate" class="md-nav__link">
+    cat (catenate)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    more
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    less
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtres-i-readrecaments" class="md-nav__link">
+    Filtres i readreçaments:
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtres i readreçaments:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readrecaments" class="md-nav__link">
+    readreçaments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtres-o-canonades" class="md-nav__link">
+    Filtres o canonades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprimirdescomprimir" class="md-nav__link">
+    Comprimir/descomprimir
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprimir/descomprimir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comanda-gzip" class="md-nav__link">
+    Comanda gzip:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comanda-tar" class="md-nav__link">
+    Comanda tar:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execuccio-de-linterpret-dordres" class="md-nav__link">
+    Execucció de l'interpret d'ordres
+  </a>
+  
+    <nav class="md-nav" aria-label="Execucció de l'interpret d'ordres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-de-larbre-de-directoris" class="md-nav__link">
+    Estructura de l’arbre de directoris.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-fitxers-i-directoris" class="md-nav__link">
+    Gestió de fitxers i directoris.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rutes" class="md-nav__link">
+    Rutes:
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutes:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutes-relatives" class="md-nav__link">
+    Rutes relatives:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directori-pare" class="md-nav__link">
+    Directori pare
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rutes-absolutes" class="md-nav__link">
+    Rutes absolutes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordres-basiques" class="md-nav__link">
+    Ordres bàsiques:
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordres bàsiques:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    cd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
+    pwd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    mkdir
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    cp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#du-disk-usage" class="md-nav__link">
+    du (disk usage)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df-display-free" class="md-nav__link">
+    df (display free)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-catenate" class="md-nav__link">
+    cat (catenate)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head" class="md-nav__link">
+    head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    more
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    less
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtres-i-readrecaments" class="md-nav__link">
+    Filtres i readreçaments:
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtres i readreçaments:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readrecaments" class="md-nav__link">
+    readreçaments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtres-o-canonades" class="md-nav__link">
+    Filtres o canonades
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprimirdescomprimir" class="md-nav__link">
+    Comprimir/descomprimir
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprimir/descomprimir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comanda-gzip" class="md-nav__link">
+    Comanda gzip:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comanda-tar" class="md-nav__link">
+    Comanda tar:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="gestio-de-la-informacio">Gestió de la informació</h1>
+<p>Ja hem vist com gestionar arxius i carpetes a través de la interfície gràfica (GUI). En aquesta secció estudiarem els principals comandaments relacionats amb la gestió de la informació utilitzant la línia de comandaments (CLI):
+- Creació, modificació, eliminació... d'arxius i carpetes.
+- Creació de taules de particions.
+- Formatació de particions.
+- Muntatge de particions. </p>
+<h2 id="execuccio-de-linterpret-dordres">Execucció de l'interpret d'ordres</h2>
+<p>Per a executar l'interpret d'ordres podeu utilitzar la drecera de teclat <em>Ctrl + Alt + T</em>. Altres opcions menys recomanades són anar a través del menú d'aplicacions o utilitzar les icones d'accés.</p>
+<h3 id="prompt">Prompt</h3>
+<p>A l'accedir a la shell, vos apareixerà el prompt, indicant que està esperant instruccions:</p>
+<p><code>ferran@debian:~$</code></p>
+<p><strong>ferran</strong> és l'usuari que està executant la shell.</p>
+<p><strong>debian</strong> és el nom de la màquina sobre la que està executant la shell. Ens podem connectar a altres màquines remotes a través de la shell.</p>
+<p><strong>~</strong> indica que en quin directori ens trobem actualment. El símbol <em>~</em> representa el home de l'usuari, és a dir, substituix <em>/home/ferran</em></p>
+<p><strong>$</strong> indica que l'usuari no té permisos d'administrador, en cas de tindre permissos d'administrador, apareixerà el símbol <strong>#</strong>.</p>
+<h2 id="estructura-de-larbre-de-directoris">Estructura de l’arbre de directoris.</h2>
+<p>El sistema d'arxius de Linux té una estructura jeràrquica, on tots els directoris pengen d'un, anomenat arrel, que es representa pel caràcter "/".
+Penjant d'ell podem trobar altres directoris, i així successivament.
+El conjunt d'un directori de què pengen altres directoris amb fitxers i més subdirectoris es coneix com a arbre de subdirectoris.
+Dels directoris més importants destaca el directori <em>home</em>, que conté els arxius personals dels usuaris de sistema.
+Altres directoris són els següents:</p>
+<ul>
+<li>/bin → conté els programes que poden executar tots els usuaris de sistema. Són arxius binaris o executables.</li>
+<li>/boot → conté els fitxers de configuració d'arrencada de sistema.</li>
+<li>/boot/grub → conté el carregador d'arrencada GRUB. </li>
+<li>/dev → conté els arxius de l'maquinari de el sistema. </li>
+<li>/etc → conté els fitxers de configuració de sistema.</li>
+<li>/home → és el directori que conté els directoris personals de tots els usuaris de sistema. A més, per a cada usuari, tindrà el directori:</li>
+<li>/home/usuari/Escriptori → conté l'escriptori de l'usuari (en ocasions apareix com Desktop en lloc d'Escriptori).</li>
+<li>/lib → conté les biblioteques necessàries perquè s'executin els programes que tenim en /bin i /sbin.</li>
+<li>/media → conté les unitats físiques que tenim muntades o que es munten automàticament, com discs durs, unitats de DVD, pendrives ...</li>
+<li>/mnt → directori on es munten sistemes d'arxius de forma temporal, quan sigui necessari.</li>
+<li>/opt → aquí podem instal·lar aplicacions que no vénen en els repositoris i que per tant no s'instal·len automàticament.</li>
+<li>/proc → conté arxius que reben o envien informació a l'nucli. Els fitxers que conté realment resideixen en memòria. Aquests fitxers ens permeten obtenir informació sobre els processos en execució. Per exemple, el fitxer partitions conté informació de les particions del disc. El fitxer sistemes de fitxers conté els sistemes d'arxius de sistema.</li>
+<li>/root → directori personal de l'root o administrador de sistema.</li>
+<li>/sbin → conté programes que només pot executar el superusuari.</li>
+<li>/usr → conté els programes d'ús general per a tots els usuaris.</li>
+<li>/tmp → conté arxius temporals.</li>
+<li>/var → conté informació variable, registres, dades dels servidors, etc.</li>
+<li>/var/log → conté els fitxers de registre (logs).  </li>
+</ul>
+<h2 id="gestio-de-fitxers-i-directoris">Gestió de fitxers i directoris.</h2>
+<h2 id="rutes">Rutes:</h2>
+<h3 id="rutes-relatives">Rutes relatives:</h3>
+<p>Les rutes relatives indiquen el camí per trobar un element, però basant-nos en el directori des del qual s'executa l'ordre, o sigui, des del directori on ens trobem posicionats. Per saber si són correctes o no hem de saber sempre des d'on s'han utilitzat.
+Vegem algun exemple:</p>
+<p><img alt="Exemple rutes " src="../img/rutes.png" /></p>
+<p>Si em trobe en el directori <code>/home</code> i voldria mourem al directori <code>/home/usuari/carpeta1</code> hauria d'indicar el camí fins on vull anar partint des d'on em trobe. Vegem</p>
+<pre><code>cd usuari/carpeta1
+</code></pre>
+<h3 id="directori-pare">Directori pare</h3>
+<p>Anomenem directori pare, a directori que conté a aquell en el qual ens trobem.
+És fonamental per a la construcció de rutes relatives saber que <code>..</code> representa el directori pare. Per tant si executo <code>cd ..</code> estic donant l'ordre de canviar des del directori actual al seu pare.</p>
+<p>Si fem ls -la al directori actual ens monstra un directori . I un directori ..  el primer fa referència a directori on ens trobem i el segon respectivament fa referència a directori pare.
+Per moure'ns cap enrere fent ús de rutes relatives podem indicar-li a l'ordre cd que es mogui  al seu directori pare (un nivell dins de la jerarquia cap enrere) o de diversos alhora depenent de cap a on vulguem moure'ns.
+Si estem a la carpeta1 i volem pujar 3 nivells seria </p>
+<pre><code>cd ../../..
+</code></pre>
+<h3 id="rutes-absolutes">Rutes absolutes:</h3>
+<p>El sistema de fitxers és una estructura jeràrquica que en el cas de Linux té una arrel que s'indica quan es posa només el caràcter barra /. L'arrel conté els directoris principals de sistema que a la vegada tindran subdirectoris en el seu interior, aquesta estructura de directoris es correspon amb l'estàndard de jerarquies de directoris FHS. Quan jo vull indicar on es troba un element fent servir una ruta absoluta, hauré d’indicar-li tots els directoris pels quals cal passar començant des de l'arrel de sistema, SEMPRE.</p>
+<p>Exemple: al cas anterior, tenint en compte la imatge per accedir a carpeta1</p>
+<pre><code>cd /home/usuario/carpeta1
+</code></pre>
+<p>Aquestes rutes solen ser bastant llargues, però com avantatge tenen que funcionen sempre, sense importar el lloc des del qual executi l'ordre. És molt recomanable utilitzar la facilitat que ofereix la shell de completar el nom d'un element de sistema de fitxers prement la tecla tabulador. Estalviarà molt de temps i possibles errors de mecanografia (tenint en compte que es discriminen majúscules i minúscules en els noms dels directoris), a aquesta acció la coneixem com autocompletat.</p>
+<h2 id="ordres-basiques">Ordres bàsiques:</h2>
+<h3 id="ls">ls</h3>
+<p>La comanda ls permet llistar el contingut d'un directori. 
+Sintaxi: </p>
+<pre><code>  ls [opcions] [directori | fitxer]
+</code></pre>
+<p>Algunes opcions:
+* -l: mostra la sortida en format llarg.
+* -R: llista recursivament un directori.
+* -a: llista més els fitxers ocults (els seus noms comencen amb punt).
+* -h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) -i: mostra l'identificador de l'i-node associat a cada element.</p>
+<p>Exemples:
+1. Des del teu directori personal, mostra en format llarg els fitxers tty0 a tty9 de directori /dev, utilitzant caràcters comodins.
+2. Mostra ara els fitxers de directori /dev que comencin per tty, independentment del caràcters hagi després.
+3. Mostra les entrades del teu directori personal, de manera que et mostri l'i-node de cadascuna i informació sobre el tipus de fitxer.
+4. Mostra les entrades del teu directori personal, en format llarg.
+5. Mostra-ara amb la mida dels fitxers en la unitat de mesura més gran que es pugui</p>
+<p>solució:</p>
+<pre><code>1. ls -l /dev/tty[0-9] o bé ls -l /dev/tty{0,1,2,3,4,5,6,7,8,9} 
+2. ls -l /dev/tty*
+3. ls -Fi
+4. ls -l
+5. ls -lh
+</code></pre>
+<h3 id="cd">cd</h3>
+<p>La comanda cd s'utilitza per canviar el directori actual. 
+Sintaxi: </p>
+<pre><code>cd [directori]
+</code></pre>
+<p>exemples:</p>
+<pre><code>  $cd /tmp
+  $cd   #canvia a el directori home 
+  $cd ~ #canvia a el directori home 
+</code></pre>
+<h3 id="pwd">pwd</h3>
+<p>La comanda pwd indica el camí absolut de directori en el qual ens trobem actualment. exemple:</p>
+<pre><code>$pwd # ens torna alguna cosa com /home/ubuntu
+</code></pre>
+<p>Exemples:</p>
+<ol>
+<li>Mostra la ruta absoluta de directori on estàs. Mou-te a directori arrel. Aneu ara a directori /etc/init.d Utilitza la comanda que et porti a directori d'on véns. Comprova on estas.
+solució:</li>
+</ol>
+<pre><code>pwd
+cd /
+cd /etc/init.d 
+cd ~
+pwd
+</code></pre>
+<h3 id="mkdir">mkdir</h3>
+<p>La comanda mkdir s'utilitza per crear directoris.</p>
+<p>exemples:</p>
+<pre><code>$mkdir bin
+$mkdir /bin
+$mkdir -p docs/linuxdocs  HOWTO/pdf #es creen els directoris intermedis si cal
+</code></pre>
+<h3 id="mv">mv</h3>
+<p>La comanda mv mou un fitxer cap a un altre, o diversos fitxers cap a un directori. Aquest permet al seu torn canviar el nom fitxers o directoris.
+Sintaxi: </p>
+<pre><code>mv [opcions] &lt;orige&gt; &lt;destí&gt;
+mv [opcions] &lt;fitxers&gt; &lt;directori&gt;
+</code></pre>
+<p>Algunes opcions:</p>
+<ul>
+<li>-i: executa la comanda de forma interactiva, és a dir, pregunta davant de sobreescriure el destí si existís.</li>
+<li>-u: actualitza (upgrade) el destí amb el orige només si aquest és més recent.</li>
+</ul>
+<p>exemples:</p>
+<pre><code>$mv mail.cf mail.cf.old #reanomeneu un fitxer
+$mv -i *.txt /tmp #mou fitxers acabats en .txt a directori /tmp
+$mv -u program.c src/ #actualitza el fitxer destí si és menys recent que el d’orige.
+</code></pre>
+<h3 id="cp">cp</h3>
+<p>La comanda cp permet copiar un fitxer en un altre, o diversos fitxers en un directori. </p>
+<p>sintaxi:</p>
+<pre><code>cp [opcions] &lt;font&gt; &lt;destí&gt;
+cp [opcions] &lt;fitxers&gt; &lt;directori&gt;
+</code></pre>
+<p>Algunes opcions:</p>
+<ul>
+<li>-R: còpia recursivament un directori.</li>
+<li>-i: utilitza una forma interactiva (pregunta abans de sobreescriure el destí). </li>
+<li>-l: fa enllaços forts als fitxers fonts en lloc de copiar-los.</li>
+</ul>
+<p>exemples:</p>
+<pre><code>$cp /etc/passwd. # Còpia un fitxer en el directori actual
+$cp -i /usr/bin/* sh/tmp # còpia interactivament els fitxers acabats en sh en un directori anomenat /tmp
+</code></pre>
+<h3 id="rm">rm</h3>
+<p>La comanda rm s'utilitza per esborrar (desenllaçar) fitxers Sintaxi: </p>
+<pre><code>rm [opcions] &lt;fitxers|directoris&gt;
+</code></pre>
+<p>Algunes opcions:</p>
+<ul>
+<li>-r: esborra recursivament un directori.</li>
+<li>-f: esborra forçosament en cas que no es tingui permís d'escriptura en forma directa. </li>
+<li>-i: executa la comanda de forma interactiva.</li>
+</ul>
+<p>exemples:</p>
+<pre><code>$rm prova
+$rm -i bin/*
+$rm -rf /tmp
+</code></pre>
+<h3 id="file">file</h3>
+<p>mostra el tipus de fitxer</p>
+<h3 id="du-disk-usage">du (disk usage)</h3>
+<p>mostra l'espai que ocupa el fitxer o directori</p>
+<p>opcions:</p>
+<ul>
+<li>-b → mostra la mida en bytes</li>
+<li>-h → mostra la mida en la unitat de mesura més gran, perquè s'entengui millor</li>
+</ul>
+<h3 id="df-display-free">df (display free)</h3>
+<p>mostra l'espai lliure en els dispositius d'emmagatzematge
+opcions:</p>
+<ul>
+<li>-h → mostra la mida en la unitat de mesura més </li>
+<li>-k → --blok-size = 1K</li>
+<li>-a → mostra tots, fins i tot els que tinguin mida 0</li>
+</ul>
+<h3 id="cat-catenate">cat (catenate)</h3>
+<p>mostra el contingut dels fitxers que se li passin com arguments.
+opcions:</p>
+<ul>
+<li>-n → enumera totes les línies.</li>
+</ul>
+<h3 id="head">head</h3>
+<p>mostra les 10 primeres línies dels fitxers que s'indiquin
+opcions:</p>
+<ul>
+<li>-n → mostra les n primeres línies en lloc de les 10 primeres. </li>
+</ul>
+<h3 id="tail">tail</h3>
+<p>mostra les 10 últimes línies dels fitxers que se li indiquin
+opcions:</p>
+<ul>
+<li>-n → mostra les n darreres línies</li>
+<li>-f → mostra les modificacions de el fitxer en temps real</li>
+</ul>
+<h3 id="more">more</h3>
+<p>mostra el contingut dels fitxers però de forma paginada. A diferència de la comanda cat, quan mostri el contingut de l'arxiu, si aquest ocupa més d'una pantalla, es quedarà esperant que es premi una tecla. Si és la barra d'espai, s'avançarà una pàgina, i si és la tecla enter, s'avançarà una línia. Amb la tecla q finalitzarà l'execució.</p>
+<h3 id="less">less</h3>
+<p>mostra el contingut dels fitxers de la mateixa manera que more, amb la diferència que podem moure'ns per ells utilitzant les tecles de cursor.</p>
+<h2 id="filtres-i-readrecaments">Filtres i readreçaments:</h2>
+<h3 id="sort">sort</h3>
+<p>La comanda sort ordena les línies d'un fitxer mostrant per la sortida estàndard. De no especificar-un fitxer pren l'entrada estàndard.
+Sintaxi:</p>
+<pre><code> sort [opcions] [fitxer]
+</code></pre>
+<p>Algunes opcions:</p>
+<ul>
+<li>-r: ordena a l'inrevés.</li>
+<li>-f: tracta les majúscules i minúscules per igual.</li>
+<li>-g: ordena de forma numèrica, de manera que no cal que els números es omplin amb zeros per l'esquerra.</li>
+</ul>
+<p>Exemple: </p>
+<pre><code>$sort -f /etc/passwd
+</code></pre>
+<h3 id="ln">ln</h3>
+<p>crea un enllaç a el fitxer o directori que se li especifiqui. Si és a un directori, l'enllaç serà simbòlic.
+opcions:</p>
+<ul>
+<li>-s → crea un enllaç simbòlic en comptes de dur</li>
+<li>-t → especifica el directori on es crearan els enllaços</li>
+</ul>
+<h3 id="cut">cut</h3>
+<p>mostra només certes línies dels fitxers que se li passin com a argument.
+opcions:</p>
+<ul>
+<li>-b → mostra només els bytes que se li especifiquin</li>
+<li>-c → mostra només els caràcters que se li especifiquin</li>
+<li>-d → fa servir el caràcter que se li especifiqui com a delimitador en comptes del tabulador</li>
+<li>-f → mostra només els camps que se li indiquin a la llista. Pot ser un camp, una sèrie de camps separats per comes o un rang.</li>
+<li>-s → no mostra les línies que no continguin el delimitador --output-delimiter = cadena → fa servir la cadena com a delimitador de sortida en comptes del delimitador d'entrada.</li>
+</ul>
+<h3 id="grep">grep</h3>
+<p>mostra les línies d'un fitxer que coincideixen amb un patró especificat.
+opcions:</p>
+<ul>
+<li>-r → -R → per buscar de forma recursiva dins dels fitxers d'un directori</li>
+<li>-n → mostra el nombre corresponent de la línia en què es troba el patró</li>
+<li>-i → no distingeix entre majúscules i minúscules</li>
+<li>-v → mostra les línies que no es corresponen amb el patró</li>
+<li>-w → el patró ha d'aparèixer com una paraula completa i no com una part d'una paraula</li>
+<li>-c → escriu el nombre de línies que satisfan la condició</li>
+<li>-l → s'escriuen els noms dels fitxers que contenen línies buscades</li>
+</ul>
+<p>patró:</p>
+<pre><code>*text* → línies que continguin la cadena &quot;text&quot; 
+^text → línies que comencin per &quot;text&quot; 
+^[^text] → línies que no comencen per &quot;text&quot; 
+*text → línies que acabin per &quot;text&quot;
+</code></pre>
+<h3 id="readrecaments">readreçaments</h3>
+<p>&lt; → redirecciona l'entrada estàndard substituint-la per l'arxiu que s'indique.
+> →redirecciona la sortida d'un procés a el fitxer que se li indiqui, esborrant la informació que el fitxer contenia.</p>
+<p>>&gt; →redirecciona la sortida d'un procés a el fitxer que se li indiqui, però afegint aquesta sortida a la fi de el fitxer, sense esborrar l'anterior.</p>
+<p>2&gt; →redirecciona la sortida d'errors d'un procés a el fitxer que se li indiqui, esborrant la informació que el fitxer contenia.</p>
+<p>2&gt;&gt; →redirecciona la sortida d'errors d'un procés a el fitxer que se li indiqui, però afegint aquesta sortida a la fi de el fitxer, sense esborrar l'anterior.</p>
+<h3 id="filtres-o-canonades">Filtres o canonades</h3>
+<p>Les canonades o filtres s'utilitzen en una línia d'ordres per a connectar la sortida estàndard d'una ordre amb l'entrada estàndard d'un altre. Per a això s'utilitza el caràcter |.</p>
+<h2 id="comprimirdescomprimir">Comprimir/descomprimir</h2>
+<h3 id="comanda-gzip">Comanda gzip:</h3>
+<p>Si el que necessites és comprimir només un arxiu, només cal escriure el seu nom després de la comanda gzip. Si no et trobes en el mateix directori on estan ubicats els arxius, hauràs d'escriure també la ruta. Una cosa semblant al que fem en el següent exemple:</p>
+<pre><code>gzip &quot;/home/usuario/Imágenes/wallpaper/photo01.jpeg&quot; (crearia un fitxer amb extensió .gz)
+</code></pre>
+<p>Per a descomprimir-lo utilitzariem l’ordre :</p>
+<pre><code>gunzip &quot;/home/usuario/Imágenes/wallpaper/photo01.jpeg.gz&quot;
+</code></pre>
+<p>Podem comprimir més d’un arxiu a la vegada i crearà 3 fitxers nous comprimits:</p>
+<pre><code>gzip arxiu1.txt arxiu2.txt arxiu3.txt 
+</code></pre>
+<h3 id="comanda-tar">Comanda tar:</h3>
+<p>En realitat, l'ordre tar està pensat per crear un nou arxiu que actuï com a contenidor d'altres arxius, però no els comprimeix.
+Així, per exemple, podem crear un arxiu que contingui en el seu interior totes les imatges en format jpeg d'un directori, escrivint la següent ordre:</p>
+<pre><code> tar -vcf ~/Imatges/wallpaper/imagenes.tar  ~ /Imatges/wallpaper/*.jpeg
+ ```
+
+En el nostre exemple, hem utilitzat la mateixa ruta com a origen i com a destinació, perquè puguis veure a la finestra de l'explorador d'arxius del que està passant. No obstant això, tu pots fer servir les que prefereixis.En aquest cas, l'argument v ens permet obtenir detalls de l'funcionament de tar, l'argument c indica que volem crear un arxiu i l'argument f especifica el nom de l'arxiu contenidor (en aquest exemple, Imágenes.tar).
+A continuació, només ens falta incloure els arxius que anem a emmagatzemar en el contenidor (en el nostre exemple, tots els que acabin en .jpeg).
+Comprovar el contingut d'un arxiu contenidor
+Un cop creat l'arxiu contenidor, podrem consultar el seu contingut canviant l'argument c per t. Així, per veure el contingut de l'arxiu anterior, escriurem el següent:
+</code></pre>
+<p>tar -vtf imagenes.tar</p>
+<pre><code>Hem dit a el principi que l'ordre tar, per si mateix, no comprimeix la informació que guarda dins de l'arxiu contenidor. No obstant això, podem utilitzar l'argument z perquè la sortida de l'ordre tar s'enviï a la comanda gzip obtenint així un arxiu comprimit.
+Per comprovar-ho, tornem a la carpeta amb les imatges originals:
+</code></pre>
+<p>tar -czvf imagenes.tar.gz  *.jpeg</p>
+<pre><code>
+A més, fins i tot podem triar enviar-los a bzip2, un altre comanda de compressió que aplica algoritmes diferents a gzip. Per aconseguir-ho, només cal canviar l'argument z, que afegíem en l'exemple anterior, pel l'argument j.
+Per comptant, la comanda ens quedaria així:
+</code></pre>
+<p>tar -cjvf imagenes.tar.bz2  *.jpeg
+```</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              About
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+    
+  </body>
+</html>
