@@ -99,8 +99,37 @@ Sintaxi:
 Algunes opcions:
 * -l: mostra la sortida en format llarg.
 * -R: llista recursivament un directori.
-* -a: llista més els fitxers ocults (els seus noms comencen amb punt).
+* -a: llista més els fitxers ocults.
+  > Recordeu que els arxius ocults comencen per punt.
 * -h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) -i: mostra l'identificador de l'i-node associat a cada element.
+
+#### *Globbing*: *wildcards* (comodins) i opcions
+
+El *Globbing* ens permet trobar arxius dels quals no coneixem el nom exacte però tenim una idea quins elements de text el componen. Per això utilitzem els anomenats *wildcards* (comodins) de manera que aquests serveixen per trobar patrons durant les búsquedes.
+
+Hem vist anteriorment que l'ordre ls llista fitxers i directoris. Suposem que volem llistar només aquells fitxers que tinguin l'extensió “.doc”. Amb la següent ordre ho aconseguirem:
+
+```bash
+$ ls *.doc
+```
+
+> En aquest exemple hem indicat que lliste qualsevol arxiu amb l'extensió “.doc”. L'asterisc fa la funció de comodí (qualsevol cadena de caràcters).
+
+Els caràcters comodí poden apareixer al principi, al final o entre mig dels patrons, inclús poden aparéixer diverses vegades.
+
+Així com el caràcter asterisc substitueix qualsevol cadena de text, de longitud indeterminada, el caràcter ? substitueix un únic caràcter, de longitud 1. En aquest cas també poden aparéixer diverses vegades i en diverses posicions.
+
+Per exemple: 
+
+```bash
+$ ls arxiu-?.jpg
+```
+
+Llistarà arxius com arxiu-1.jpg, arxiu-a.jpg... Però no arxius com arxiu-12.jpg.
+
+Tenim la possibilitat de passar-li diferents opcions per fer globbing utilitzant els caràcters `{}`. Per exemple, si volem llistar els directoris /dev i /home a la vegada, podem fer `ls /{dev,home}`. També podem utilitzar els mateixos caràcters per generar opcions numèriques de forma molt comprimida, per exemple `ls {1..9}` llistarà el contingut de les carpetes 1 a 9. Si no volem que genere d'un en un les llistes numèriques, li podem indicar un bot en un tercer paràmetre. `ls {1..10..2}` llistaria el contingut de les carpetes 1,3,5,7 i 9.
+
+> El globbing es pot utilitzar en altres ordres també.
 
 Exemples:
 1. Des del teu directori personal, mostra en format llarg els fitxers tty0 a tty9 de directori /dev, utilitzant caràcters comodins.
@@ -111,7 +140,7 @@ Exemples:
 
 solució:
 ```
-1. ls -l /dev/tty[0-9] o bé ls -l /dev/tty{0,1,2,3,4,5,6,7,8,9} 
+1. ls -l /dev/tty[0-9] o bé ls -l /dev/tty{0..9} o bé ls -l /dev/tty{0,1,2,3,4,5,6,7,8,9} 
 2. ls -l /dev/tty*
 3. ls -Fi
 4. ls -l
