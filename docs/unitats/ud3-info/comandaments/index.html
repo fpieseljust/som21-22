@@ -368,6 +368,19 @@
     ls
   </a>
   
+    <nav class="md-nav" aria-label="ls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globbing-wildcards-comodins-i-opcions" class="md-nav__link">
+    Globbing: wildcards (comodins) i opcions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -700,6 +713,19 @@
     ls
   </a>
   
+    <nav class="md-nav" aria-label="ls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#globbing-wildcards-comodins-i-opcions" class="md-nav__link">
+    Globbing: wildcards (comodins) i opcions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -973,21 +999,35 @@ Sintaxi: </p>
 <p>Algunes opcions:
 * -l: mostra la sortida en format llarg.
 * -R: llista recursivament un directori.
-* -a: llista més els fitxers ocults (els seus noms comencen amb punt).
+* -a: llista més els fitxers ocults.</p>
+<blockquote>
+<p>Recordeu que els arxius ocults comencen per punt.
 * -h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) -i: mostra l'identificador de l'i-node associat a cada element.</p>
+</blockquote>
+<h4 id="globbing-wildcards-comodins-i-opcions"><em>Globbing</em>: <em>wildcards</em> (comodins) i opcions</h4>
+<p>El <em>Globbing</em> ens permet trobar arxius dels quals no coneixem el nom exacte però tenim una idea quins elements de text el componen. Per això utilitzem els anomenats <em>wildcards</em> (comodins) de manera que aquests serveixen per trobar patrons durant les búsquedes.</p>
+<p>Hem vist anteriorment que l'ordre ls llista fitxers i directoris. Suposem que volem llistar només aquells fitxers que tinguin l'extensió “.doc”. Amb la següent ordre ho aconseguirem:</p>
+<pre><code class="language-bash">$ ls *.doc
+</code></pre>
+<blockquote>
+<p>En aquest exemple hem indicat que lliste qualsevol arxiu amb l'extensió “.doc”. L'asterisc fa la funció de comodí (qualsevol cadena de caràcters).</p>
+</blockquote>
+<p>Els caràcters comodí poden apareixer al principi, al final o entre mig dels patrons, inclús poden aparéixer diverses vegades.</p>
+<p>Així com el caràcter asterisc substitueix qualsevol cadena de text, de longitud indeterminada, el caràcter ? substitueix un únic caràcter, de longitud 1. En aquest cas també poden aparéixer diverses vegades i en diverses posicions.</p>
+<p>Per exemple: </p>
+<pre><code class="language-bash">$ ls arxiu-?.jpg
+</code></pre>
+<p>Llistarà arxius com arxiu-1.jpg, arxiu-a.jpg... Però no arxius com arxiu-12.jpg.</p>
+<p>Tenim la possibilitat de passar-li diferents opcions per fer globbing utilitzant els caràcters <code>{}</code>. Per exemple, si volem llistar els directoris /dev i /home a la vegada, podem fer <code>ls /{dev,home}</code>. També podem utilitzar els mateixos caràcters per generar opcions numèriques de forma molt comprimida, per exemple <code>ls {1..9}</code> llistarà el contingut de les carpetes 1 a 9. Si no volem que genere d'un en un les llistes numèriques, li podem indicar un bot en un tercer paràmetre. <code>ls {1..10..2}</code> llistaria el contingut de les carpetes 1,3,5,7 i 9.</p>
+<blockquote>
+<p>El globbing es pot utilitzar en altres ordres també.</p>
+</blockquote>
 <p>Exemples:
 1. Des del teu directori personal, mostra en format llarg els fitxers tty0 a tty9 de directori /dev, utilitzant caràcters comodins.
 2. Mostra ara els fitxers de directori /dev que comencin per tty, independentment del caràcters hagi després.
 3. Mostra les entrades del teu directori personal, de manera que et mostri l'i-node de cadascuna i informació sobre el tipus de fitxer.
 4. Mostra les entrades del teu directori personal, en format llarg.
 5. Mostra-ara amb la mida dels fitxers en la unitat de mesura més gran que es pugui</p>
-<p>solució:</p>
-<pre><code>1. ls -l /dev/tty[0-9] o bé ls -l /dev/tty{0,1,2,3,4,5,6,7,8,9} 
-2. ls -l /dev/tty*
-3. ls -Fi
-4. ls -l
-5. ls -lh
-</code></pre>
 <h3 id="cd">cd</h3>
 <p>La comanda cd s'utilitza per canviar el directori actual. 
 Sintaxi: </p>

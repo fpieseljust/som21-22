@@ -138,15 +138,6 @@ Exemples:
 4. Mostra les entrades del teu directori personal, en format llarg.
 5. Mostra-ara amb la mida dels fitxers en la unitat de mesura més gran que es pugui
 
-solució:
-```
-1. ls -l /dev/tty[0-9] o bé ls -l /dev/tty{0..9} o bé ls -l /dev/tty{0,1,2,3,4,5,6,7,8,9} 
-2. ls -l /dev/tty*
-3. ls -Fi
-4. ls -l
-5. ls -lh
-```
-
 
 ### cd
 La comanda cd s'utilitza per canviar el directori actual. 
