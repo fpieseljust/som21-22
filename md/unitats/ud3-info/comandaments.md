@@ -132,6 +132,7 @@ Tenim la possibilitat de passar-li diferents opcions per fer globbing utilitzant
 > El globbing es pot utilitzar en altres ordres també.
 
 Exemples:
+
 1. Des del teu directori personal, mostra en format llarg els fitxers tty0 a tty9 de directori /dev, utilitzant caràcters comodins.
 2. Mostra ara els fitxers de directori /dev que comencin per tty, independentment del caràcters hagi després.
 3. Mostra les entrades del teu directori personal, de manera que et mostri l'i-node de cadascuna i informació sobre el tipus de fitxer.
