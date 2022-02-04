@@ -97,11 +97,13 @@ Sintaxi:
 ```
 
 Algunes opcions:
+
 * -l: mostra la sortida en format llarg.
 * -R: llista recursivament un directori.
 * -a: llista més els fitxers ocults.
   > Recordeu que els arxius ocults comencen per punt.
-* -h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) -i: mostra l'identificador de l'i-node associat a cada element.
+* -h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) 
+* -i: mostra l'identificador de l'i-node associat a cada element.
 
 #### *Globbing*: *wildcards* (comodins) i opcions
 
@@ -415,4 +417,76 @@ A més, fins i tot podem triar enviar-los a bzip2, un altre comanda de compressi
 Per comptant, la comanda ens quedaria així:
 ```
 tar -cjvf imagenes.tar.bz2  *.jpeg
+```
+
+### Comanada unzip
+
+Per a descomprimir arxius comprimits amb zip, simplement utilitzarem:
+
+```bash
+unzip arxiu.zip
+```
+
+Algunes opcions interessants:
+
+- -d "carpeta" per a descomprimir a esta carpeta1
+- -l per a llistar els arxius sense descomprimir
+
+### Comanada zip
+
+Per a crear arxius comprimits amb zip utilitzarem aquesta ordre.
+
+```bash
+zip -r arxiu.zip carpeta
+```
+
+L'anterior ordre crearà arxiu.zip amb tot el contingut de la carpeta.
+
+## Busqueda d'arxius
+
+### Comanda find
+
+Amb find podem buscar arxius a l'arbre de directoris a partir de la ruta que li indiquem. La seua sintaxi és:
+
+`find <directori d'inici> <opcions> <terme buscat>`
+
+Opcions importants:
+
+- -name busca un arxiu per nom.
+- -iname buca un arxiu per nom sense diferènciar entre majúscules i minúscules.
+- -not busca arxius que no complisquen amb el terme buscat.
+- -delete al final de l'ordre elimina els arxius trobats.
+- -type per a especificar un tipus
+    - d per a directories
+    - f per a arxius regulars
+- -size búsqueda per tamany amb les següents unitats (amb els símbols + i - indiquem tamany major a o menor a):
+    - -c -> B
+    - -k -> KB
+    - -M -> MG
+    - -G -> GB
+    - -b -> blocs (512B normalment)
+
+Exemples:
+```bash
+find . -iname arxiu
+find . -not -name "*.pdf"
+find . -name "*.bak" -delete
+find / -type d -name "carpeta*"
+find / -size +5G
+```
+
+### Comanada locate
+
+Amb esta comanda també podem buscar arxius a la base de dades de Linux. Però en algunes distribucions no ve instal·lat per defecte:
+
+`locate <opcions> <terme buscat>`
+
+Opcions importants:
+- -i per a no distinguir entre majúscules i minúscules
+- -q per a desactivar errors
+
+Exemples:
+
+```bash
+locate -iq Arxiu
 ```

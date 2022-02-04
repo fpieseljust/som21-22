@@ -563,6 +563,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#comanada-zip" class="md-nav__link">
+    Comanada zip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busqueda-darxius" class="md-nav__link">
+    Busqueda d'arxius
+  </a>
+  
+    <nav class="md-nav" aria-label="Busqueda d'arxius">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comanda-find" class="md-nav__link">
+    Comanda find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comanada-locate" class="md-nav__link">
+    Comanada locate
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -908,6 +942,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#comanada-zip" class="md-nav__link">
+    Comanada zip
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busqueda-darxius" class="md-nav__link">
+    Busqueda d'arxius
+  </a>
+  
+    <nav class="md-nav" aria-label="Busqueda d'arxius">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comanda-find" class="md-nav__link">
+    Comanda find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comanada-locate" class="md-nav__link">
+    Comanada locate
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -996,14 +1064,17 @@ Si estem a la carpeta1 i volem pujar 3 nivells seria </p>
 Sintaxi: </p>
 <pre><code>  ls [opcions] [directori | fitxer]
 </code></pre>
-<p>Algunes opcions:
-* -l: mostra la sortida en format llarg.
-* -R: llista recursivament un directori.
-* -a: llista més els fitxers ocults.</p>
-<blockquote>
-<p>Recordeu que els arxius ocults comencen per punt.
-* -h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) -i: mostra l'identificador de l'i-node associat a cada element.</p>
+<p>Algunes opcions:</p>
+<ul>
+<li>-l: mostra la sortida en format llarg.</li>
+<li>-R: llista recursivament un directori.</li>
+<li>-a: llista més els fitxers ocults.<blockquote>
+<p>Recordeu que els arxius ocults comencen per punt.</p>
 </blockquote>
+</li>
+<li>-h: mostra la mida dels fitxers en forma més llegible (Ex .: 16M, 4k, etc.) </li>
+<li>-i: mostra l'identificador de l'i-node associat a cada element.</li>
+</ul>
 <h4 id="globbing-wildcards-comodins-i-opcions"><em>Globbing</em>: <em>wildcards</em> (comodins) i opcions</h4>
 <p>El <em>Globbing</em> ens permet trobar arxius dels quals no coneixem el nom exacte però tenim una idea quins elements de text el componen. Per això utilitzem els anomenats <em>wildcards</em> (comodins) de manera que aquests serveixen per trobar patrons durant les búsquedes.</p>
 <p>Hem vist anteriorment que l'ordre ls llista fitxers i directoris. Suposem que volem llistar només aquells fitxers que tinguin l'extensió “.doc”. Amb la següent ordre ho aconseguirem:</p>
@@ -1238,8 +1309,65 @@ Per comprovar-ho, tornem a la carpeta amb les imatges originals:
 A més, fins i tot podem triar enviar-los a bzip2, un altre comanda de compressió que aplica algoritmes diferents a gzip. Per aconseguir-ho, només cal canviar l'argument z, que afegíem en l'exemple anterior, pel l'argument j.
 Per comptant, la comanda ens quedaria així:
 </code></pre>
-<p>tar -cjvf imagenes.tar.bz2  *.jpeg
-```</p>
+<p>tar -cjvf imagenes.tar.bz2  *.jpeg</p>
+<pre><code>
+### Comanada unzip
+
+Per a descomprimir arxius comprimits amb zip, simplement utilitzarem:
+
+```bash
+unzip arxiu.zip
+</code></pre>
+<p>Algunes opcions interessants:</p>
+<ul>
+<li>-d "carpeta" per a descomprimir a esta carpeta1</li>
+<li>-l per a llistar els arxius sense descomprimir</li>
+</ul>
+<h3 id="comanada-zip">Comanada zip</h3>
+<p>Per a crear arxius comprimits amb zip utilitzarem aquesta ordre.</p>
+<pre><code class="language-bash">zip -r arxiu.zip carpeta
+</code></pre>
+<p>L'anterior ordre crearà arxiu.zip amb tot el contingut de la carpeta.</p>
+<h2 id="busqueda-darxius">Busqueda d'arxius</h2>
+<h3 id="comanda-find">Comanda find</h3>
+<p>Amb find podem buscar arxius a l'arbre de directoris a partir de la ruta que li indiquem. La seua sintaxi és:</p>
+<p><code>find &lt;directori d'inici&gt; &lt;opcions&gt; &lt;terme buscat&gt;</code></p>
+<p>Opcions importants:</p>
+<ul>
+<li>-name busca un arxiu per nom.</li>
+<li>-iname buca un arxiu per nom sense diferènciar entre majúscules i minúscules.</li>
+<li>-not busca arxius que no complisquen amb el terme buscat.</li>
+<li>-delete al final de l'ordre elimina els arxius trobats.</li>
+<li>-type per a especificar un tipus<ul>
+<li>d per a directories</li>
+<li>f per a arxius regulars</li>
+</ul>
+</li>
+<li>-size búsqueda per tamany amb les següents unitats (amb els símbols + i - indiquem tamany major a o menor a):<ul>
+<li>-c -&gt; B</li>
+<li>-k -&gt; KB</li>
+<li>-M -&gt; MG</li>
+<li>-G -&gt; GB</li>
+<li>-b -&gt; blocs (512B normalment)</li>
+</ul>
+</li>
+</ul>
+<p>Exemples:</p>
+<pre><code class="language-bash">find . -iname arxiu
+find . -not -name &quot;*.pdf&quot;
+find . -name &quot;*.bak&quot; -delete
+find / -type d -name &quot;carpeta*&quot;
+find / -size +5G
+</code></pre>
+<h3 id="comanada-locate">Comanada locate</h3>
+<p>Amb esta comanda també podem buscar arxius a la base de dades de Linux. Però en algunes distribucions no ve instal·lat per defecte:</p>
+<p><code>locate &lt;opcions&gt; &lt;terme buscat&gt;</code></p>
+<p>Opcions importants:
+- -i per a no distinguir entre majúscules i minúscules
+- -q per a desactivar errors</p>
+<p>Exemples:</p>
+<pre><code class="language-bash">locate -iq Arxiu
+</code></pre>
                 
               
               
