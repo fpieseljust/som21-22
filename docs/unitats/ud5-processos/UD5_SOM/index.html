@@ -1,0 +1,857 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://fpieseljust.github.io/som21-22/unitats/ud5-processos/UD5_SOM/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>UD 5. Administració dels sistemes operatius. Gestió de processos - Sistemes operatius monolloc 21-22</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#administracio-dels-sistemes-operatius" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sistemes operatius monolloc 21-22" class="md-header__button md-logo" aria-label="Sistemes operatius monolloc 21-22" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemes operatius monolloc 21-22
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD 5. Administració dels sistemes operatius. Gestió de processos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sistemes operatius monolloc 21-22" class="md-nav__button md-logo" aria-label="Sistemes operatius monolloc 21-22" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Sistemes operatius monolloc 21-22
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Unitats
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unitats" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unitats
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Unitat 3 - Gestió de la informació
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unitat 3 - Gestió de la informació" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unitat 3 - Gestió de la informació
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud3-info/comandaments/" class="md-nav__link">
+        Teoria
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Unitat 4 - Usuaris, grups i permissos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unitat 4 - Usuaris, grups i permissos" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Unitat 4 - Usuaris, grups i permissos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4-permisos/UD4_SOM/" class="md-nav__link">
+        Teoria
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ud4-permisos/UD4_SOM_exercicis/" class="md-nav__link">
+        Exercicis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Unitat 5 - Processos i aplicacions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unitat 5 - Processos i aplicacions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Unitat 5 - Processos i aplicacions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Teoria
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="administracio-dels-sistemes-operatius"><strong>Administració dels sistemes operatius</strong></h1>
+<h1 id="gestio-de-processos">Gestió de processos.</h1>
+<h2 id="definicio-de-proces">Definició de procés:</h2>
+<p>Se sap que un procés és un programa que utilitza la CPU o bé es carrega principalment a la memòria. La diferència entre  procés i programes és que, cada vegada que executem un programa  es crea un procés nou i diferent. A més, podem tenir diferents processos del mateix programa  al mateix temps i el context de cada procés és diferent.
+Els processos funcionen de la mateixa manera que els usuaris i els grups, tenen assignat  un nombre.
+Aquest número es diu Process ID (PID), identifica cada procés i és diferent per a cada procés.</p>
+<h2 id="gestio-de-processos_1">Gestió de processos:</h2>
+<p>Per gestionar processos es poden utilitzar les ordres següents:</p>
+<ul>
+<li>ps ⇒ informa sobre l’estat del procés. Disposa de diferents opcions per mostrar columnes diferents. Les columnes més destacades són:</li>
+<li>USUARI ⇒ usuari amb qui s’executa el procés</li>
+<li>PID ⇒ Identificador del procés </li>
+<li>PPID ⇒ Identificadors del procés pare</li>
+<li>UID ⇒Identificador del propietari del procés</li>
+<li>TTY ⇒ informació sobre quin terminal està executant el procés.</li>
+<li>TIME t⇒ temps acumulat de la CPU</li>
+<li>CMD ⇒ nom del programa que inicia el procés</li>
+<li>RSS⇒ (mida del conjunt de residents) Mida de la part resident del procés. És la quantitat de la memòria principal que ha utilitzat el procés (KiB)</li>
+<li>NI ⇒ prioritat del procés.</li>
+<li>% CPU⇒ percentatge de la CPU utilitzada</li>
+<li>STAT⇒Estat del procés. Els estats del procés poden ser:<ul>
+<li>R ⇒ procés en curs o en cua llesta</li>
+<li>S ⇒ Bloquejat (a l'espera que tinguin lloc altres esdeveniments dins del procés.)</li>
+<li>T ⇒ aturat.</li>
+<li>D ⇒ esperant altres esdeveniments, alguna tasca d'entrada / sortida</li>
+<li>Z ⇒ zombi, procés acabat, però ha d’informar al procés pare.</li>
+</ul>
+</li>
+</ul>
+<p>Sintaxi:</p>
+<pre><code>    ps [opcions]
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-A ⇒ mostra les columnes d'informació: PID, TTY, TIME, CMD</li>
+<li>-e ⇒ mostra informació sobre tot el procés del sistema (el mateix que -A)</li>
+<li>-l ⇒ mostra molta informació sobre els processos (el resultat és diferent segons el signe - abans de l’opció)</li>
+<li>-u pepe  mostra la informació de l'usuari pepe.</li>
+<li>-ely ⇒ que les opcions s’utilitzen juntes per tal de mostrar tota la informació com a PID,PPID, HORA, CMD, NI, RSS ,. . .</li>
+<li>aux ⇒ (sense signe -) mostra les columnes de USER, PID, RSS, TTY, STAT,TEMPS,...<pre><code>pstree ⇒ mostra els processos en execució com a arbre.
+</code></pre>
+</li>
+</ul>
+<p>Sintaxi:</p>
+<pre><code>    pstree [opcions]
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-u ⇒ mostra el propietari del procés</li>
+</ul>
+<p>Exemples:</p>
+<ol>
+<li>Mostra la informació de tots els processos que s'estan executant.</li>
+<li>Mostra el PID d'alguns processos d'execució.</li>
+<li>Mostra tots els processos com a arbre i mostra els propietaris. Pagina  la sortida</li>
+</ol>
+<p>Solució:</p>
+<ol>
+<li>ps -aux</li>
+<li>ps -A | nom_proc grep -i</li>
+<li>pstree -Gu | more<pre><code>nohup, &amp; ⇒ S'utilitza per executar processos en segon pla. En qualsevol cas, es troba la terminal disponible per executar ordres mentre el procés en segon pla s’està executant.
+</code></pre>
+</li>
+</ol>
+<p>Sintaxi:</p>
+<pre><code>        nohup ordre &amp;
+
+</code></pre>
+<pre><code>
+        sleep ⇒ aquest comandament s'utilitza per retardar un període de temps determinat. La unitat per defecte està en segons, però és possible utilitzar-lo amb minuts, hores i dies parells (m, h, d).
+</code></pre>
+<p>Exemple:</p>
+<p>sleep 5 ⇒ 5 segons es retardarà.</p>
+<p>Sleep 5 m ⇒ 5 minuts de retard.</p>
+<p>Exemples:</p>
+<ol>
+<li>Executeu l'ordre de suspensió per temporitzar 10 segons i prova a executar una  altra comanda com ls -l. Mireu que la segona ordre no s’executarà desprès de  deu segons.</li>
+<li>Executeu la comanda de suspensió per retardar-la de nou 10 segons. Però aquesta vegada utilitza la comanda per enviar-la  a segon pla (nohup o &amp;).</li>
+</ol>
+<p>Solució:</p>
+<ol>
+<li>sleep 10</li>
+<li>sleep 10 o nohup sleep 10 &amp;</li>
+</ol>
+<p>Ara, la sol·licitud està disponible per executar noves ordres i és possible executar-la ls o algun altre ordre a causa de l'ordre de suspensió s'està executant en segon pla.</p>
+<pre><code>    renice ⇒  la comanda s’utilitza per modificar la prioritat d’un procés en execució
+</code></pre>
+<p>Sintaxi:</p>
+<pre><code>    renice [opcions] prioritat PID_process
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-p ⇒ s'utilitza per si voleu aplicar la comanda a més d'un procés.</li>
+<li>-u ⇒ s'utilitza en cas que l'objectiu sigui aplicar la comanda a tots els processos d’algun usuari.</li>
+</ul>
+<p>Exemples:</p>
+<ol>
+<li>L'objectiu desitjat per a un usuari és executar una operació científica en un procés, però mentre que aquest procés s’executa, l’usuari vol executar un joc. Per tant, l'usuari vol canviar la prioritat del procés científic des de que s'està executant el joc. Si el procés científic està utilitzant el PID 785:</li>
+</ol>
+<p>renice +15 785</p>
+<p>on la prioritat més positiva és la prioritat inferior</p>
+<ol>
+<li>Al ser l’administrador d’usuaris del sistema, es fa evident que s’executa un usuari molts processos. Per tant, és possible canviar tots els processos d'aquest usuari:</li>
+</ol>
+<p>renice +19 -nom_usuari</p>
+<pre><code> nice ⇒ Aquest comandament s’utilitza per establir la prioritat del procés.
+</code></pre>
+<p>La prioritat disponible per al procés pot anar de -20 (prioritat màxima) a 19 (prioritat mínima). Es pot veure la prioritat a la columna NI (comanda ps). Més endavant, es calcula la prioritat real, i es pot veure a la columna PRI (comanda ps).</p>
+<p>Sintaxi:</p>
+<pre><code>    nice [opcions] comanda
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-n número ⇒ la comanda s’executarà amb la prioritat indicada.</li>
+</ul>
+<p>Exemple:</p>
+<p>Si l'usuari vol gravar l'ISO d'Ubuntu al cd-Rom, però al mateix temps vol executar LliureOffice,  per tal d'anul·lar alguna tasca, l'usuari pot executar la comanda per realitzar el Ubuntu iso amb la prioritat establerta, ja que fer un iso és un procés molt exigent en termes de recursos utilitzats.</p>
+<p>nice -n 19 dd if=/dev/cdrom of=~/ubuntu-19.10-desktop-amd64.iso</p>
+<pre><code>    jobs ⇒ mostra l'estat de les tasques iniciades a la finestra del terminal actual. Les feines ho són numerats a partir de l’1 de cada sessió. Alguns programes utilitzen els números d'identificació de treball en lloc de PIDs. Per suspendre algun procés, cal prémer les tecles CTRL + Z.
+</code></pre>
+<p>Sintaxi:</p>
+<pre><code>        jobs
+
+</code></pre>
+<pre><code>    fg ⇒ que la comanda s’utilitza per enviar a primer pla els processos que es troben en segon pla o aturat.
+</code></pre>
+<p>Sintaxi:</p>
+<pre><code>    fg %n
+</code></pre>
+<p>on n és el número de la llista que apareix per la comanda Jobs. Si s'especifica algun procés, el processar amb la marca + a la llista d'ordres de treball que s'envia a primer pla.</p>
+<pre><code>    bg ⇒ Aquesta ordre s'utilitza per reiniciar un procés de fons aturat.
+</code></pre>
+<p>Sintaxi:</p>
+<pre><code>    bg %n
+</code></pre>
+<p>on n és el número de la llista que apareix per l'ordre Jobs.</p>
+<pre><code>    kill ⇒ per matar el procés indicat. S'utilitza per enviar alguns altres senyals al procés.
+</code></pre>
+<p>Sintaxi:</p>
+<pre><code>    kill [opcions] PID
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-9 ⇒ -SIGKILL⇒ matar el procés el PID del qual s'envia com a argument.</li>
+<li>-l ⇒ mostra tots els senyals que es poden enviar al procés.<pre><code>killall ⇒ matar tots els processos relacionats amb el procés indicat. Aquesta vegada, el nom de el procés s'ha d'especificar en lloc del número de procés.
+</code></pre>
+</li>
+</ul>
+<p>Sintaxi:</p>
+<pre><code>    killall [opcions] nom_procés
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-kill ⇒ matar el procés.</li>
+<li>-i ⇒pregunta si realment es vol matar el procés.</li>
+<li>-l ⇒ mostra tots els senyals que es poden enviar al procés.<pre><code>Time ⇒ s'executa amb una ordre per saber el temps que es dedica a executar la comanda, recursos utilitzats, etc.
+</code></pre>
+</li>
+</ul>
+<p>Sintaxi:</p>
+<pre><code>        time comanda
+</code></pre>
+<pre><code>
+        top⇒ Mostra informació sobre el sistema i els processos executats. La informació s’actualitza cada 3 segons.
+</code></pre>
+<p>Sintaxi:</p>
+<pre><code>    top [opcions]
+</code></pre>
+<p>Opcions:</p>
+<ul>
+<li>-d ⇒ per canviar el retard (en segons) entre les actualitzacions de la part superior.</li>
+</ul>
+<p>Exemples:</p>
+<ol>
+<li>Executeu nano text4.txt.</li>
+<li>Atureu-lo i envieu-lo a  segon pla.</li>
+<li>Comproveu-ho.</li>
+<li>Executeu nano text5.txt en segon pla.</li>
+<li>Envieu el primer procés a primer pla. Això vol dir que el procés es torna a executar.</li>
+<li>Tanca nano</li>
+<li>Mata el segon procés.</li>
+</ol>
+<p>Solució:</p>
+<ol>
+<li>nano txet4.txt</li>
+<li>CTRL + Z</li>
+<li>jobs</li>
+<li>nano text5.txt &amp;</li>
+<li>jobs  / fg% 1</li>
+<li>CTRL + X</li>
+<li>kill % 2</li>
+</ol>
+<p>Exemples finals:</p>
+<ol>
+<li>Instala 'leafpad' </li>
+</ol>
+<pre><code>sudo apt-get install leafpad 
+</code></pre>
+<ol>
+<li>Executa 'leafpad' de manera que vaja directament a segon plà. Ara mostra els treballs en execució o segon pla.Porta a primer pla de nou el procés  'Leafpad'. Amb la combinació de tecles corresponent, envia a segon pla  aquest procés. Torna a mirar els treballs oberts. Mata el procés corresponent a 'Leafpad'. Torna a mirar els treballs oberts.
+Com veus, tot i que abans ja s'havia matat el procés, seguia apareixent a la llista perquè es pugui veure que ja no va a aparèixer més. Després tancar-lo amb normalitat apareix el procés amb l'estat Fet. Després de tancar-lo amb el senyal SIGTERM apareix el procés amb l'estat Acabat. La segona vegada que l'executem desapareixen els processos.</li>
+</ol>
+<pre><code>leafpad &amp; 
+jobs
+fg %1 
+CONTROL Z 
+jobs 
+kill %1  o bien killall –KILL leafpad o kill -9 PID 
+jobs 
+jobs 
+</code></pre>
+<ol>
+<li>Executa de nou 'Leafpad' perquè vagi a segon pla. Executa 'gedit' perquè vagi també a segon pla. Revisa els treballs oberts. Envia a primer pla a 'gedit'. Després tanca-ho des de l'entorn gràfic. Revisa els treballs oberts i mira si hi ha diferent informació entre matar el procés amb kill o des de l'entorn gràfic. Torna a executar 'gedit' perquè vagi a segon pla. Ara envia a primer pla a 'Leafpad'. Amb la combinació de tecles corresponent envia-ho a segon pla. Llista els treballs oberts. Mata els processos de 'gedit' i de 'Leafpad'. Mostra les tasques oberts</li>
+</ol>
+<pre><code>leafpad &amp; 
+gedit &amp; 
+jobs
+fg %2 jobs 
+gedit &amp;
+fg leafpad 
+CONTROL Z 
+jobs
+kill %1 %2 
+jobs
+</code></pre>
+<h1 id="instalacions-i-actualitzacions">Instalacions i actualitzacions</h1>
+<h2 id="el-software">El software</h2>
+<p>\begin{figure}
+\centering
+\includegraphics[width=11cm]{img/software.png}
+\caption{El software}
+\end{figure}</p>
+<h3 id="que-son-les-dependencies">Què són les dependències?</h3>
+<p>Un Programari normalment no funciona si no té una sèrie de llibreries o programes de suport que el propi programari fa servir per no haver d'implementar ell mateix totes les funcions, llibreries de dibuixat, d'accés a base de dades ...
+Important: És tasca dels programadors del Programari indicar quines són les dependències de la mateixa, però a l'igual que hi ha errors en el codi, de vegades ocorren errors en la definició de les dependències i serà tasca dels administradors de sistemes fer que el Programari funcioni en els sistemes.
+Les dependències solen estar especificades en fitxers Readme.txt, en les instruccions d'instal·lació o en el cas dels compilats i preparats per a la seva distribució aquestes dependències poden ser consultades via els gestors de paquets, tal com veurem més endavant en el tema.
+Si una dependència no està instal·lada, el programari pot no funcionar o senzillament no funcionar en absolut. És totalment indispensable que les dependències estiguin instal·lades, a l'acció d'instal·lar les dependències i les dependències de les mateixes en cert ordre se li crida Resolució de dependències.</p>
+<h3 id="la-versio-dun-programari-versionat">La versió d'un Programari (versionat)</h3>
+<p>El versionat de programari és el procés d'assignació d'un nom, codi o número únic, a un programari per a indicar el seu nivell de desenvolupament. Generalment s'assigna dos nombres, mayor.menor (en anglès: major.minor), que van incrementant a mesura que el desenvolupament de programari augmenti i es requereixi l'assignació d'un nou nom, codi o número únic. Encara que menys habituals, també pot indicar un altre nombre més, micro, i la fase de desenvolupament en què es troba el programari.
+S'augmenta el nombre quan:</p>
+<ul>
+<li>major: el programari pateix grans canvis i millores.</li>
+<li>menor: el programari pateix petits canvis i / o correccions d'errors.</li>
+<li>micro: s'aplica una correcció al programari, i al seu torn pateix pocs canvis.</li>
+<li>fase: s'indica si es troba en una fase de desenvolupament que no sigui la final o estable, és a dir, una fase inestable o en proves. Se sol indicar amb un guió seguit de la fase corresponent en minúscules, o un espai seguit de la fase. Hi pot haver diverses versions d'una mateixa fase, per indicar l'avanç en el desenvolupament de programari però mantenint la fase per indicar que encara és inestable, indicant afegint un nombre a la fi de el nom de la fase que va incrementant conforme es publiquin noves versions d'aquesta fase.</li>
+</ul>
+<h3 id="seguretat-i-actualitzacions">Seguretat i actualitzacions</h3>
+<p>Les versions de programari són sempre "creixents" en el temps, i és tasca dels administradors de sistemes mantenir el programari instal·lat actualitzat i operatiu. Això és especialment important en servidors i estacions de treball crítiques, ja que un programari desactualitzat, és un programari vulnerable. Els virus, hackers, i en general aquell programari que tracta d'aprofitar-se de fallades de programari es recolzen en "errors coneguts" de l'programari que es troba instal·lat per poder aconseguir els seus objectius. A continuació es mostra un gràfic (2014) que mostra els errors detectats en el dia "0" del llançament de cada paquet de programari i els bugs que encara persisteixen en l'any següent. Ens adonem de seguida que si no actualitzem el programari, tots els errors que hi poden ser utilitzats pels atacants per a comprometre la seguretat.</p>
+<h3 id="paquets-en-linux">Paquets en linux:</h3>
+<p>Els paquets existents en GNU / Linux, són dependents de la distribució en la qual s'estiguin fent servir; són utilitzats normalment per a la compressió d'aplicacions en diferents formats per a diferents mitjans d'instal·lació. Aquests són un conjunt de fitxers que contenen instruccions per a la reconstrucció de l'aplicació dins del sistema nou, dins d'aquests, podem trobar, Paquets Binaris i Paquets de codi Font.
+Els Paquets Binaris, contenen, com s'esmenta, la informació necessària per reconstruir una aplicació en un sistema nou, sense necessitat de trobar-se en la mateixa computadora; els més comuns són:</p>
+<ul>
+<li>DEB: Contenen executables, arxius de configuració, pàgines d'informació, drets de copyright i altres documentacions, els paquets Debian es col·loquen en arxius .deb. El nom del paquet ha de contenir:<pre><code> &lt;NumeroDeVersión&gt; - &lt;VersiónDeDebian&gt; - &lt;ArquitecturaDeDebian&gt; .deb
+</code></pre>
+</li>
+</ul>
+<p>Un desavantatge d'aquest tipus de paquets, és el seu sistema d'actualització, a causa que, es necessita tenir tots els arxius, com si es tractés una nova instal·lació. Aquests paquets també són usats per distribucions basades en la distribució Debian, algunes d'aquestes, són: Ubuntu, Kubuntu, ZorinOS, Linux Mint, entre otras.</p>
+<ul>
+<li>RPM: Per les seves sigles en anglès Redhat Package Manager, aquest tipus d'empaquetat per Linux va ser desenvolupat per a la distribució de Red Hat, per tal de crear un sistema fàcil de crear i instal·lar. Actualment totes les distribucions basades en Red Hat ocupen els paquets RPM, algunes d'elles són: Fedora i openSUSE. Un avantatge, sobre aquest tipus de paquets sobre altres, és la seva forma d'actualització per a les aplicacions, aquests, no necessiten tenir les mateixes dades que l'instal·lador original, només pot incloure (si es desitja) els arxius que s'actualitzaran, això redueix altament el pes del paquet.</li>
+<li>TGZ: És un arxiu de paquets específic per a Unix, comprimit amb el compressor GNU Zip. És un paquet de codi font, ocupat per contenir aplicacions, i el seu codi font, per no haver de crear un tipus de paquet específic per a cada distribució. A diferència dels paquets .deb, o .rpm, aquest no conté instruccions particulars d'instal·lació per a cada distribució, de manera que la instal·lació del contingut haurà de ser compilat per l'usuari.</li>
+<li>Ebuild: Paquet usat només per la distribució Gentoo, consisteix en un script bash, executable només en un entorn específic. Els seus arxius, deuen ser arxius de text amb l'extensió .ebuild. El nomenament d'aquest paquet ha d'obeir la regla següent:<pre><code>nom-versión.ebuild
+</code></pre>
+</li>
+</ul>
+<p>El contingut del nom només pot contenir lletres minúscules sense accentuar, dígits del zero al nou, guions, guions baixos o el signe d'addició.</p>
+<h2 id="les-actualitzacions">Les actualitzacions</h2>
+<p>Les actualitzacions dels paquets poden realitzar-se amb tan sols una ordre: </p>
+<pre><code>    apt-get upgrade
+</code></pre>
+<p>Podem utilitzar aquesta opció per actualitzar els paquets de la distribució actual, o bé per actualitzar a una nova distribució, tot i que el comandament és una millor opció.</p>
+<pre><code>    apt-get dist-upgrade
+</code></pre>
+<p>És molt útil utilitat junt amb l'opció -u. Aquesta opció mostra la llista completa de paquets que APT s'actualitzarà. Sense ella, s'estaria actualitzant a cegues. APT descarregarà les versions més recents de cada paquet i les instal·larà de la manera més apropiada. És molt important executar apt-get update abans de provar això.</p>
+<p>\begin{figure}
+\centering
+\includegraphics[width=11cm]{img/update.png}
+\caption{actualización}
+\end{figure}</p>
+<h2 id="els-repositoris">Els repositoris</h2>
+<p>Podem veure la llista de repositoris principal d'Ubuntu escrivint</p>
+<pre><code>    sudo nano /etc/apt/sources.list
+</code></pre>
+<p>\begin{figure}
+\centering
+\includegraphics[width=11cm]{img/repositoris.png}
+\caption{Els repositoris }
+\end{figure}</p>
+<p>El primer que hem de fer és una còpia per evitar-nos problemes davant de qualsevol modificació.
+Exemples:</p>
+<pre><code>    deb-src http://archive.ubuntu.com/ubuntu groovy universe restricted main multiverse
+</code></pre>
+<p>on:</p>
+<ul>
+<li>deb: Indica un repositori de paquets prèviament compilats.</li>
+<li>deb-src: És un repositori de codi font de programes.</li>
+<li>http://archive.ubuntu.com/ubuntu: És l'identificador uniforme de recursos (per les seves sigles en anglès). És el link d'accés al servidor on està el repositori.</li>
+<li>groovy: Indica la versió de sistema operatiu.</li>
+<li>universe restricted main multiverse: indica el tipus de repositori.</li>
+</ul>
+<p>Perquè qualsevol canvi que fem en els repositoris funcioni, hem de guardar la llista primer i desprès  actualitzar la llista de repositoris.
+També podem afegir repositoris des de la línia de comandes:</p>
+<pre><code>    sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ groovy main'
+    sudo apt update
+</code></pre>
+<p>La comanda sudo add-apt-repository també s'utilitza per als paquets personals d'arxius. Per exemple per afegir el repositori ppa de Krita, escrivim:</p>
+<pre><code>    sudo add-apt-repository ppa: kritalime/ppa
+    sudo apt update
+</code></pre>
+<h2 id="instalar-paquets-des-de-els-repositoris">Instalar paquets des de els repositoris</h2>
+<h3 id="comanda-apt">Comanda apt:</h3>
+<p>Per instal·lar un paquet nou:</p>
+<pre><code>    $ sudo apt-get install nom_del_paquet
+</code></pre>
+<p>Opció remove  per eliminar un paquet del nostre sistema utilitzem:</p>
+<pre><code>    $ sudo apt-get remove nom_del_paquet
+</code></pre>
+<p>\begin{figure}
+\centering
+\includegraphics[width=11cm]{img/apt.png}
+\caption{La comanda apt }
+\end{figure}</p>
+<h3 id="comanda-dpkg">Comanda dpkg</h3>
+<p>\begin{figure}
+\centering
+\includegraphics[width=11cm]{img/dpkg.png}
+\caption{La comanda dpkg }
+\end{figure}</p>
+<h3 id="comanda-rpm">Comanda rpm</h3>
+<p>A Red Hat l'eina per excel·lència per administrar paquets és la comanda rpm que posseeix moltíssimes opcions. Internament rpm es basa en una base de dades amb informació sobre el instal · lat, les dependències existents, etc. Aquesta base de dades és actualitzada amb transparència pel rpm quan s'instal·la, s'actualitza o desinstal un paquet. També es pot consultar per conèixer informació diversa sobre el ja instal·lat en el sistema.</p>
+<p>\begin{figure}
+\centering
+\includegraphics[width=11cm]{img/rpm.png}
+\caption{La comanda rpm }
+\end{figure}</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../ud4-permisos/UD4_SOM_exercicis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exercicis" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Exercicis
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              About
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -10,6 +10,8 @@ nav:
       - Unitat 4 - Usuaris, grups i permissos:
         - Teoria: unitats/ud4-permisos/UD4_SOM.md
         - Exercicis: unitats/ud4-permisos/UD4_SOM_exercicis.md
+      - Unitat 5 - Processos i aplicacions:
+        - Teoria: unitats/ud5-processos/UD5_SOM.md
     - About: about.md
 theme:
   name: material
